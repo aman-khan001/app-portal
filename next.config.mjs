@@ -1,8 +1,11 @@
-const isProd = process.env.NODE_ENV === 'production';
-
-export const output = 'export';
-export const images = {
-    unoptimized: true, // Required for GitHub Pages
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "export",
+  basePath: "/app-portal",
+  assetPrefix: "/app-portal/",
+  images: {
+    unoptimized: true, // Required for GitHub Pages if using images
+  },
 };
-export const basePath = isProd ? '/app-portal' : '';
-export const assetPrefix = isProd ? '/app-portal/' : '';
+
+export default nextConfig;
